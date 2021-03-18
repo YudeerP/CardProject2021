@@ -15,22 +15,21 @@ function createDeck(){
            console.log(card);
             //adds the record 'card' with its current value to the array 'deck'
             deck.push(card);
-           if(card.Colour !== ("Red")) {
-               console.log("this card is invalid");
-           }
+
+
 
             }
         }
 
 
     if(deck.length !== 30){
-        console.log(deck)
+        console.log(deck);
         deck = [];
         //loops through the arrays of colours and numbers and sets the value and colour of each card
         for (let i = 0; i < colours.length; i++) {
             for (let n = 0; n < nums.length; n++){
                 let card = {'Colour' : colours[i], 'Value': nums[n]};
-                console.log(card)
+                console.log(card);
                 //adds the record 'card' with its current value to the array 'deck'
                 deck.push(card);
             }
@@ -81,8 +80,8 @@ function play() {
     //prints the deck to validate if it has been shuffled or not
     console.log(deck);
     //changes the header that says shuffled deck to introduce first card
-    document.getElementById("header1").innerHTML="The First Card is: "
+    document.getElementById("header1").innerHTML="The First Card is: ";
     //displays the first card
     display(deck, 0)}
-    createDeck()
+    createDeck();
 
