@@ -2,22 +2,44 @@
 //creates an array of 30 objects with a value and colour that is returned as the deck
 function createDeck(){
     let colours = ["Red", "Black", "Yellow"];
+    console.log(colours);
     let nums = [1,2,3,4,5,6,7,8,9,10];
+    console.log(nums);
     //creates the array that will hold the deck
     let deck = [];
 
     //loops through the arrays of colours and numbers and sets the value and colour of each card
     for (let i = 0; i < colours.length; i++) {
         for (let n = 0; n < nums.length; n++){
-            let card = {'Colour' : colours[i], 'Value': nums[n]};
+            let card = {Colour : colours[i], Value: nums[n]};
+           console.log(card);
             //adds the record 'card' with its current value to the array 'deck'
             deck.push(card);
+           if(card.Colour !== ("Red")) {
+               console.log("this card is invalid");
+           }
 
+            }
+        }
+
+
+    if(deck.length !== 30){
+        console.log(deck)
+        deck = [];
+        //loops through the arrays of colours and numbers and sets the value and colour of each card
+        for (let i = 0; i < colours.length; i++) {
+            for (let n = 0; n < nums.length; n++){
+                let card = {'Colour' : colours[i], 'Value': nums[n]};
+                console.log(card)
+                //adds the record 'card' with its current value to the array 'deck'
+                deck.push(card);
+            }
         }
     }
     //returns the array deck with the 30 records of cards
     return deck;
 }
+
 
 
 
@@ -29,6 +51,7 @@ function shuffle(deck) {
         const j = Math.floor(Math.random() * (i + 1));
         [deck[i], deck[j]] = [deck[j], deck[i]];
     }
+
 }
 
 
@@ -60,9 +83,6 @@ function play() {
     //changes the header that says shuffled deck to introduce first card
     document.getElementById("header1").innerHTML="The First Card is: "
     //displays the first card
-    display(deck, 1)}
-
-play()
-
-
+    display(deck, 0)}
+    createDeck()
 
